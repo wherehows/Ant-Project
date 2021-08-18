@@ -1,0 +1,16 @@
+.app {
+    margin : 0 auto;
+    margin-top : 2rem;
+    width : 70%;
+}
+form {
+    display : flex;
+    justify-content: space-between;
+}
+
+.category-container {
+    display : flex;
+    flex-direction : column;
+    width : 10%;
+    text-align : center;
+}
