@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                height: 100%;
+            }
+
+            .container {
+                height: 100%;
+                width: 500px;
+                display: flex;
+                flex-flow: row nowrap;
+                flex-shrink: 0;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .container .expand {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: 0;
+                height: 40px;
+                padding: 0 10px 0 10px;
+                border: none;
+                border-radius: 10px;
+                min-width: auto;
+                font-weight: bold;
+                font-size: 25px;
+                margin: 7px;
+                opacity: 0.6;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .container .collapse {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: 0;
+                height: 40px;
+                padding: 0 10px 0 10px;
+                border: none;
+                border-radius: 10px;
+                min-width: auto;
+                font-weight: bold;
+                font-size: 25px;
+                margin: 7px;
+                opacity: 0.6;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .wrapped-container {
+                flex-flow: row wrap;
+            }
+
+            .container .wrapped-expand {
+                opacity: 0;
+            }
+
+            .container .wrapped-collapse {
+                opacity: 0.6;
+            }
+
+            .container input {
+                font-size: 20px;
+                width: 200px;
+                border: none;
+                border-radius: 10px;
+                background-color: #e0e0e0;
+            }
+
+            .container input:focus {
+                outline: none;
+                background-color: #cfcfcf;
+            }
+
+            .item {
+                padding: 0 10px 0 10px;
+                white-space: nowrap; 
+                border-radius: 10px;
+                margin: 7px;
+                width: auto;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+            }
+
+            .item1 {
+                background-color: #e0e0e0;
+            }
+            .item2 {
+                background-color: #e0e0e0;
+            }
+            .item3 {
+                background-color: #e0e0e0;
+            }
+            .item4 {
+                background-color: #e0e0e0;
+            }
+            .item5 {
+                background-color: #e0e0e0;
+            }
+            .item6 {
+                background-color: #e0e0e0;
+            }
+            .item7 {
+                background-color: #e0e0e0;
+            }
+            .item8 {
+                background-color: #e0e0e0;
+            }
+            .item9 {
+                background-color: #e0e0e0;
+            }
+            .item10 {
+                background-color: #e0e0e0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item item1">Array</div>
+            <div class="item item2">String</div>
+            <div class="item item3">Hash Table</div>
+            <div class="item item4">Dynamic Programming</div>
+            <div class="item item5">Math</div>
+            <div class="item item6">DFS</div>
+            <div class="item item7">BFS</div>
+            <div class="item item8">Matrix</div>
+            <div class="item item9">TwoPointer</div>
+            <div class="item item10">Queue</div>
+            <button class="collapse">최소화</button>
+            <button class="expand">확장</button>
+        </div>
+        <script>
+            const $container = document.querySelector('.container');
+            const $expandBtn = $container.querySelector('.expand');
+            const $collapseBtn = document.querySelector('.collapse');
+            $expandBtn.addEventListener('click', (e) => {
+              if(!e.target.classList.contains('wrapped-expand')) {
+                $container.classList.toggle('wrapped-container');
+                $collapseBtn.classList.toggle('wrapped-collapse');
+                $expandBtn.classList.toggle('wrapped-expand');
+              }
+            });
+
+            $collapseBtn.addEventListener('click', (e) => {
+                $container.classList.toggle('wrapped-container');
+                $collapseBtn.classList.toggle('wrapped-collapse');
+                $expandBtn.classList.toggle('wrapped-expand');
+            });
+        </script>
+    </body>
+</html>
